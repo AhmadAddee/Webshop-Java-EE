@@ -7,36 +7,40 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class ProductDB {
+public class ProductDB extends Product{
 
-    public List<Product> searchProducts(String searchString, Connection connection) {
-        Product product = null;
-        List<Product> products = new ArrayList<>();
-        // Connection connection = DBConnection.getConnectionToDatabase();
+
+    public static Collection searchProducts(String productGroup) {
+        List list = new ArrayList();
+
         try {
+            String sql = "select * from furniture_db.products where product_name like '%" + productGroup + "%'";
 
-            String sql = "select * from furniture_db.products where product_name like '%" + searchString + "%'";
-
+            Connection connection = DBManager.getConnection();
             Statement statement = connection.createStatement();
+
 
             ResultSet set = statement.executeQuery(sql);
 
             while (set.next()) {
-                product = new Product();
-                product.setId(set.getInt("product_id"));
-                product.setName(set.getString("product_name"));
-                product.setImgUrl(set.getString("image_url"));
-                product.setDescr(set.getString("product_description"));
-                product.setPrice(set.getFloat("product_price"));
-                products.add(product);
+                int id = set.getInt("product_id");
+                String name = (set.getString("product_name"));
+                String imgUrl = (set.getString("image_url"));
+                String desc = (set.getString("product_description"));
+                float price = (set.getFloat("product_price"));
+                list.add(new ProductDB(id, name, imgUrl, desc, price));
 
             }
-
-        } catch (SQLException exception) {
+        }catch (SQLException exception) {
             exception.printStackTrace();
         }
-        return products;
+        return list;
+    }
+
+    private ProductDB(int id, String name, String imgUrl, String desc, float price) {
+        super(id, name, imgUrl, desc, price);
     }
 }

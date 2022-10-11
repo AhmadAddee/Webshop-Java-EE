@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             //set the username as an attribute
             session.setAttribute("username", username);
             //forward to home jsp
-            req.getRequestDispatcher("/html/home.jsp").forward(req, resp);
+            req.getRequestDispatcher("/html/index.html").forward(req, resp);
         } else {
             String errorMessage = "Invalid Credentials, please login again!";
             req.setAttribute("error", errorMessage);

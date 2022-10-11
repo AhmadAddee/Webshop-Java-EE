@@ -1,5 +1,9 @@
 package beans;
 
+import db.ProductDB;
+
+import java.util.Collection;
+
 public class User {
 
     private String username;
@@ -9,7 +13,11 @@ public class User {
     private String address;
 
 
-    public User(String username, String password, String firstName, String lastName, String address) {
+    static public Collection searchItems(String group) {
+        return ProductDB.searchItems(group);
+    }
+
+    protected User(String username, String password, String firstName, String lastName, String address) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -17,9 +25,6 @@ public class User {
         this.address = address;
     }
 
-    public User() {
-        // TODO Auto-generated constructor stub
-    }
 
     public String getUsername() {
         return username;

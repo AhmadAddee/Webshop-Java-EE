@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
-<%--
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%--
+
  Created by IntelliJ IDEA
  User: Ahmad & Najiib
  Date: 2022-10-08

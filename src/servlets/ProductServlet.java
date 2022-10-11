@@ -1,6 +1,5 @@
 package servlets;
 
-import beans.Product;
 import db.DBManager;
 import db.ProductDB;
 
@@ -48,9 +47,10 @@ public class ProductServlet extends HttpServlet {
 
 
         //get the search results from dao
-        ProductDB dao = new ProductDB();
+        //ProductDB dao = new ProductDB();
         Connection connection = DBManager.getConnection();//(Connection)getServletContext().getAttribute("dbconnection");
-        List<Product> products = dao.searchProducts(search, connection);
+        ArrayList<ProductDB> products = (ArrayList<ProductDB>) ProductDB.searchProducts(search);
+
 
         //set the search results in request scope
         request.setAttribute("products", products);

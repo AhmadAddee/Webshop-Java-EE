@@ -1,6 +1,6 @@
 package beans;
 
-import db.ItemDB;
+import db.ProductDB;
 
 import java.util.Collection;
 
@@ -12,10 +12,10 @@ public class Product {
     private float price;
 
     static public Collection searchItems(String group) {
-        return ItemDB.searchItems(group);
+        return ProductDB.searchItems(group);
     }
 
-    public Product(int id, String name, String imgUrl, String descr, float price) {
+    protected Product(int id, String name, String imgUrl, String descr, float price) {
         this.id = id;
         this.name = name;
         this.imgUrl = imgUrl;
@@ -23,8 +23,6 @@ public class Product {
         this.price = price;
     }
 
-    public Product() {
-    }
 
     public int getId() {
         return id;

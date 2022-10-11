@@ -18,12 +18,9 @@
 				<ul class="navbar">
 					<li><a href="home">home</a></li>
 					<li><a href="#products">products</a></li>
-					<li><a href="#history">history</a></li>
-					<li><a href="login">login</a></li>
-					<li><a href="#people">people</a></li>
+					<li><a href="login">log out</a></li>
 					<li><a href="#search">search</a></li>
 					<li><a href="register">new user?</a></li>
-					<li><a href="redirect">linkedIn</a></li>
 				</ul>
 				<!-- navbar -->
 			</div>

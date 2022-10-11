@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
-<title>H+ Sport</title>
+<title>IKOA - Login</title>
 
 </head>
 <body>
@@ -14,13 +14,13 @@
 		<nav class="nav" role="navigation">
 			<div class="container nav-elements">
 				<div class="branding">
-					<a href="#home"><img src="images/hpluslogo.svg"
+					<a href="#home"><img src="https://static.wixstatic.com/media/8bc854_ad94fb8015c642c78b391952c84315b5~mv2.jpg/v1/fill/w_419,h_235,al_c,lg_1,q_80,enc_auto/ikea%20pick%20up%20and%20delivery.jpg"
 						alt="Logo - H Plus Sports"></a>
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
 					<li><a href="home">home</a></li>
-
+					<li><a href="registerUser">new user?</a></li>
 				</ul>
 				<!-- navbar -->
 			</div>
@@ -49,10 +49,11 @@
 			%>
 			<em>LOGIN USER</em>
 			<form action="login" method="post">
-				<label>Username</label> <input type="text" name="username"
-					id="username"><br /> <label>Password</label> <input
-					type="password" name="password" id="password"><br /> <input
-					type="submit" value="Login">
+				<label>Username</label>
+				<input type="text" name="username" id="username"><br/>
+				<label>Password</label>
+				<input type="password" name="password" id="password"><br/>
+				<input type="submit" value="Login">
 			</form>
 		</div>
 	</section>
@@ -65,21 +66,13 @@
 			<nav class="nav" role="navigation">
 				<div class="container nav-elements">
 					<div class="branding">
-						<a href="#home"><img src="images/hpluslogo.svg"
-							alt="Logo - H Plus Sports"></a>
-						<p class="address">
-							100 Main Street<br> Seattle, WA 98144
-						</p>
+						<a href="#home"><img src="https://static.wixstatic.com/media/8bc854_ad94fb8015c642c78b391952c84315b5~mv2.jpg/v1/fill/w_419,h_235,al_c,lg_1,q_80,enc_auto/ikea%20pick%20up%20and%20delivery.jpg"
+							alt="Logo - "></a>
+
 					</div>
 				</div>
 			</nav>
-			<p class="legal">H+ Sport is a fictitious brand created by
-				lynda.com solely for the purpose of training. All products and
-				people associated with H+ Sport are also fictitious. Any resemblance
-				to real brands, products, or people is purely coincidental.
-				Information provided about the product is also fictitious and should
-				not be construed to be representative of actual products on the
-				market in a similar product category.</p>
+			<p IKOA</p>
 		</div>
 		<!-- container -->
 	</footer>

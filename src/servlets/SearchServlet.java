@@ -1,6 +1,5 @@
 package servlets;
 
-import beans.Product;
 import db.DBManager;
 import db.ProductDB;
 
@@ -24,15 +23,14 @@ public class SearchServlet extends HttpServlet {
         Connection connection = DBManager.getConnection();//(Connection)getServletContext().getAttribute("dbconnection");
         req.getSession().setAttribute("search", searchString);
         //call DAO layer and get all products for search criteria
-        ProductDB dao = new ProductDB();
-        List<Product> products = dao.searchProducts(searchString,connection);
+        //ProductDB dao = new ProductDB();
+        List<ProductDB> products = (List<ProductDB>) ProductDB.searchProducts(searchString);
 
         //write the products data back to the client browser
 		/*String page = getHTMLString(req.getServletContext().getRealPath("/html/searchResults.html"), products);
 		resp.getWriter().write(page);*/
         req.setAttribute("products", products);
         req.getRequestDispatcher("/html/searchResults.jsp").forward(req, resp);
-
 
     }
 }
