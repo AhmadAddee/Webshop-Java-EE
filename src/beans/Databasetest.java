@@ -43,10 +43,7 @@ public class Databasetest {
             e.printStackTrace();
         }
         products.add(product);
-        ShoppingCart cart = new ShoppingCart(user, products);
-        for (int i = 0; i < cart.getProductsInCart().size(); i++){
-            System.out.println(cart.getUser().getUsername() + " " + cart.getProductsInCart().get(i).getDescr());
-        }
+
         if (connection != null) {
             System.out.println("Connection made to DB!");
         }

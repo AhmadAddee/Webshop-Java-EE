@@ -6,12 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
-@WebServlet(name = "ShoppingCartServlet", urlPatterns = "/shopping")
+
+@WebServlet(name = "ShoppingCartServlet", urlPatterns = "/shoppingCart")
 public class ShoppingCartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/html/Result.jsp").forward(req, resp);
+
+        ArrayList<String> cart = (ArrayList<String>) req.getSession().getAttribute("cart");
+
+        req.setAttribute("carts", cart);
+        //resp.getWriter().write(cart.get(0));
+
+        getServletContext().getRequestDispatcher("/html/shoppingCart.jsp").forward(req, resp);
     }
 }

@@ -40,6 +40,33 @@ public class ProductDB extends Product{
         return list;
     }
 
+    public static ProductDB getProductById(String name) {
+        ProductDB product = null;
+        System.out.println(name);
+
+        try {
+            String sql = "select * from furniture_db.products where product_name like '%" + name + "%'";
+
+            Connection connection = DBManager.getConnection();
+            Statement statement = connection.createStatement();
+
+
+            ResultSet set = statement.executeQuery(sql);
+
+
+                int product_id = set.getInt("product_id");
+                String product_name = (set.getString("product_name"));
+                String imgUrl = (set.getString("image_url"));
+                String desc = (set.getString("product_description"));
+                float price = (set.getFloat("product_price"));
+                product = new ProductDB(product_id, product_name, imgUrl, desc, price);
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        System.out.println(product.getId());
+        return product;
+    }
+
     private ProductDB(int id, String name, String imgUrl, String desc, float price) {
         super(id, name, imgUrl, desc, price);
     }

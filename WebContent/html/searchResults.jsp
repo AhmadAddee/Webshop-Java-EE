@@ -25,14 +25,17 @@
         	if (session.getAttribute("cart") != null) {
         	%>
         	<p>
+
         		<span id="size"
         					title="<%=((ArrayList) session.getAttribute("cart"))%>">Items
-        					in Cart: <%=((ArrayList) session.getAttribute("cart")).size()%></span>
-        			</p>
-        			<%
+        					in Cart: <%=((ArrayList) session.getAttribute("cart")).size()%>
+        		</span>
+
+        	</p>
+        	<%
         				} else {
         			%>
-        			<a href=" " ><span id="size">Items in Cart :0</span></a>
+        			<span id="size">Items in Cart :0</span>
         			<%
         				}
         			%>

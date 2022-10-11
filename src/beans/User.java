@@ -17,6 +17,9 @@ public class User {
         return ProductDB.searchItems(group);
     }
 
+    public User() {
+    }
+
     protected User(String username, String password, String firstName, String lastName, String address) {
         this.username = username;
         this.password = password;

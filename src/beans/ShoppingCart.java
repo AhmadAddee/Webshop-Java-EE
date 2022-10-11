@@ -1,29 +1,32 @@
 package beans;
 
+import db.ProductDB;
+import db.UserDB;
+
 import java.util.List;
 
 public class ShoppingCart {
-    private User user;
-    private List<Product> productsInCart;
+    private UserDB user;
+    private List<ProductDB> productsInCart;
 
-    public ShoppingCart(User user, List<Product> productsInCart) {
+    public ShoppingCart(UserDB user, List<ProductDB> productsInCart) {
         this.user = user;
         this.productsInCart = productsInCart;
     }
 
-    public User getUser() {
+    public UserDB getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserDB user) {
         this.user = user;
     }
 
-    public List<Product> getProductsInCart() {
+    public List<ProductDB> getProductsInCart() {
         return productsInCart;
     }
 
-    public void setProductsInCart(List<Product> productsInCart) {
+    public void setProductsInCart(List<ProductDB> productsInCart) {
         this.productsInCart = productsInCart;
     }
 }
