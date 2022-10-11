@@ -13,11 +13,8 @@ public class User {
     private String address;
 
 
-    static public Collection searchItems(String group) {
+    static public Collection searchIUser(String group) {
         return ProductDB.searchItems(group);
-    }
-
-    public User() {
     }
 
     protected User(String username, String password, String firstName, String lastName, String address) {
@@ -27,7 +24,6 @@ public class User {
         this.lastName = lastName;
         this.address = address;
     }
-
 
     public String getUsername() {
         return username;

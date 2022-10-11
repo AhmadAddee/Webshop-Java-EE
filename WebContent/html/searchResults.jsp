@@ -51,7 +51,12 @@
 				<div class="productContainerItem">
 					<img id="pic1" src="<%=product.getImgUrl()%>">
 					<input type="text" name="product" value="<%=product.getName()%>"/>
-					<input type="text" name="product" value="<%=product.getPrice()%> $"/>
+					<input type="text" name="price" value="<%=product.getPrice()%>"/>
+                    <input type="text" name="descr" value="<%=product.getDescr()%>"/>
+                    <input type="text" name="imgUrl" value="<%=product.getImgUrl()%>"/>
+                    <input type="text" name="ID" value="<%=product.getId()%>"/>
+
+
 					<br />
 					<button>Add to Cart</button>
 				</div>

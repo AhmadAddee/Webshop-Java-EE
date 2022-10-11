@@ -18,7 +18,6 @@ public class ShoppingCartServlet extends HttpServlet {
         ArrayList<String> cart = (ArrayList<String>) req.getSession().getAttribute("cart");
 
         req.setAttribute("carts", cart);
-        //resp.getWriter().write(cart.get(0));
 
         getServletContext().getRequestDispatcher("/html/shoppingCart.jsp").forward(req, resp);
     }
