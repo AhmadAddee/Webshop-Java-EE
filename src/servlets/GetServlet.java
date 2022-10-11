@@ -25,5 +25,7 @@ public class GetServlet extends HttpServlet{
 		// a Java IO package API which help writing response on a webpage.
 		PrintWriter writer = resp.getWriter();
 		writer.write(htmlResponse + " " + value);
+		resp.getWriter().println("<html>Shopping cart!!!!!!</html>");
+		resp.getWriter().write("<html>Shopping cart!!!!!!</html>");
 	}
 }

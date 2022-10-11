@@ -1,6 +1,6 @@
 package db;
 
-import beans.Item;
+import beans.Product;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.Collection;
 import java.util.Vector;
 
-public class ItemDB extends Item {
+public class ItemDB extends Product {
 
     public static Collection searchItems(String item_group) {
         Vector v = new Vector();
@@ -32,6 +32,6 @@ public class ItemDB extends Item {
     }
 
     private ItemDB(int id, String name, String desc) {
-        super(id, name, desc);
+        super(id, name, desc, null, 0);
     }
 }

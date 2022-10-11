@@ -9,14 +9,16 @@ public class DBManager {
     private Connection connection = null;
 
     private static DBManager getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new DBManager();
+            System.out.println("Database connection made!");
+        }
         return instance;
     }
 
     private DBManager() {
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/furniture_db", "root", "rootroot");
         } catch (ClassNotFoundException e) {
             System.out.println("MySQL JDBC Driver in not found");
