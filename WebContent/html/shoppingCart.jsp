@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%-- <%@ include file="header.jsp"%> --%>
+    <%-- <%@ include file="header.jsp"%> --%>
 	<jsp:include page="header.jsp"></jsp:include>
 	<!-- #home -->
 
@@ -27,8 +27,7 @@
 
             %>
             <div class="productContainerItem">
-            <input
-            type="text" name="product" value="<%=s.toString()%>"><br />
+            <input type="text" name="product" value="<%=s.toString()%>"><br />
 
             </div>
             <%
