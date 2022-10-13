@@ -1,6 +1,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List" %>
+<%@page import="ui.ProductInfo"%>
 
 
 <!DOCTYPE html>
@@ -20,20 +21,37 @@
 	<section id="carts">
     	<div class="productContainer">
             <%
-                List<String> carts = (ArrayList<String>) request.getSession().getAttribute("cart");
-                Iterator<String> iterator = carts.iterator();
+                List<String> carts = (ArrayList<String>) request.getSession().getAttribute("carts");
+                if (carts == null){
+                %>
+                    <p>
+                        There is no products in your shopping cart!
+                    </p>
+                <%
+                } else {
+                float totalPrice = 0;
+                List<ProductInfo> products = (ArrayList) request.getAttribute("carts");
+                Iterator<ProductInfo> iterator = products.iterator();
    				while (iterator.hasNext()) {
-                String s = iterator.next();
-
+                ProductInfo product = iterator.next();
+                totalPrice += product.getPrice();
             %>
             <div class="productContainerItem">
-            <input type="text" name="product" value="<%=s.toString()%>"><br />
+                <img id="pic1" src="<%=products.get(0).getImgUrl()%>">
+                <input type="text" name="product" value="<%=product.getName()%>" disabled><br />
+            <br />
 
             </div>
             <%
                 }
             %>
-
+            <div class="productContainerItem">
+                <input type="text" name="product" value="Total: <%=totalPrice%>" disabled><br />
+                <input type="submit" name="product" value="Check out">
+            </div>
+            <%
+                }
+            %>
         </div>
 
 	</section>

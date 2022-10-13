@@ -1,4 +1,4 @@
-package controllers;
+package servlet.controllers;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +15,6 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		session.invalidate();
-		req.getRequestDispatcher("/html/index.html").forward(req, resp);
+		//req.getRequestDispatcher("/html/index.html").forward(req, resp);
 	}
 }

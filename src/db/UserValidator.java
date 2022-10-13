@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDB {
+public class UserValidator {
 
-    public boolean validateUser(String username, String password) {
+    public static boolean validateUser(String username, String password) {
         boolean isValidUser = false;
         try {
             Connection connection = DBManager.getConnection();

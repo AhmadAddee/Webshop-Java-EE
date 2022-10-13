@@ -4,7 +4,7 @@
 
   <servlet>
   <servlet-name>HomeServlet</servlet-name>
-  <servlet-class>controllers.HomeServlet</servlet-class>
+  <servlet-class>servlet.controllers.HomeServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>

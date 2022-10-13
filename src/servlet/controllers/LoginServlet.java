@@ -1,6 +1,6 @@
-package controllers;
+package servlet.controllers;
 
-import db.UserDB;
+import db.UserValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +22,7 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        UserDB dao = new UserDB();
-        boolean isValidUser = dao.validateUser(username, password);
+        boolean isValidUser = UserValidator.validateUser(username, password);
 
         if (isValidUser) {
             HttpSession session = req.getSession();

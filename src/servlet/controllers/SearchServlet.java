@@ -1,6 +1,7 @@
-package controllers;
+package servlet.controllers;
 
-import db.ProductDB;
+import beans.ProductHandler;
+import ui.ProductInfo;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +20,7 @@ public class SearchServlet extends HttpServlet {
 
         req.getSession().setAttribute("search", searchString);
 
-        List<ProductDB> products = (List<ProductDB>) ProductDB.searchProducts(searchString);
+        List<ProductInfo> products = (List<ProductInfo>) ProductHandler.getItemsWithGroup(searchString);
 
         req.setAttribute("products", products);
         req.getRequestDispatcher("/html/searchResults.jsp").forward(req, resp);

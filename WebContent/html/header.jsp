@@ -14,10 +14,10 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-					<li><a href="#login">home</a></li>
+					<li><a href="search">home</a></li>
 					<li><a href="#products">products</a></li>
 					<li><a href="login">log out</a></li>
-					<li><a href="#search">search</a></li>
+					<li><a href="search">search</a></li>
 					<li><a href="shoppingCart">View shopping cart</a></li>
 				</ul>
 				<!-- navbar -->

@@ -17,11 +17,10 @@ public class ProductDB extends Product{
         List list = new ArrayList();
 
         try {
-            String sql = "select * from furniture_db.products where product_name like '%" + name + "%'";
 
             Connection connection = DBManager.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet set = statement.executeQuery(sql);
+            ResultSet set = statement.executeQuery("select * from furniture_db.products where product_name like '%" + name + "%'");
 
             while (set.next()) {
                 int id = set.getInt("product_id");
@@ -30,7 +29,6 @@ public class ProductDB extends Product{
                 String desc = (set.getString("product_description"));
                 float price = (set.getFloat("product_price"));
                 list.add(new ProductDB(id, product_name, imgUrl, desc, price));
-
             }
         }catch (SQLException exception) {
             exception.printStackTrace();

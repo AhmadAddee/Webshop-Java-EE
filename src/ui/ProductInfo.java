@@ -1,21 +1,13 @@
-package beans;
+package ui;
 
-import db.ProductDB;
-
-import java.util.Collection;
-
-public class Product {
+public class ProductInfo {
     private int id;
     private String name;
     private String imgUrl;
     private String descr;
     private float price;
 
-    static public Collection searchItems(String group) {
-        return ProductDB.searchProducts(group);
-    }
-
-    protected Product(int id, String name, String imgUrl, String descr, float price) {
+    public ProductInfo(int id, String name, String imgUrl, String descr, float price) {
         this.id = id;
         this.name = name;
         this.imgUrl = imgUrl;

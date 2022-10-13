@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="beans.Product"%>
+<%@page import="ui.ProductInfo"%>
 <%@page import="java.util.List"%>
 <html lang="en">
 <head>
@@ -42,19 +42,21 @@
 
 		<div class="productContainer">
 			<%
-				List<Product> products = (ArrayList) request.getAttribute("products");
-				Iterator<Product> iterator = products.iterator();
+				List<ProductInfo> products = (ArrayList) request.getAttribute("products");
+				Iterator<ProductInfo> iterator = products.iterator();
 				while (iterator.hasNext()) {
-					Product product = iterator.next();
+					ProductInfo product = iterator.next();
 			%>
 			<form action="addProducts" method="get">
 				<div class="productContainerItem">
 					<img id="pic1" src="<%=product.getImgUrl()%>">
-					<input type="text" name="product" value="<%=product.getName()%>"/>
-					<input type="text" name="price" value="<%=product.getPrice()%>"/>
-                    <input type="text" name="descr" value="<%=product.getDescr()%>"/>
-                    <input type="text" name="imgUrl" value="<%=product.getImgUrl()%>"/>
-                    <input type="text" name="ID" value="<%=product.getId()%>"/>
+					<input type="text" name="product_name" value="<%=product.getName()%>" disabled/>
+					<input type="hidden" name="product_name" value="<%=product.getName()%>"/>
+					<input type="text" name="product_price" value="<%=product.getPrice()%>" disabled/>
+					<input type="hidden" name="product_price" value="<%=product.getPrice()%>"/>
+                    <input type="hidden" name="product_descr" value="<%=product.getDescr()%>"/>
+                    <input type="hidden" name="product_imgUrl" value="<%=product.getImgUrl()%>"/>
+                    <input type="hidden" name="product_ID" value="<%=product.getId()%>"/>
 
 
 					<br />
