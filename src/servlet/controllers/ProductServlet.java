@@ -41,7 +41,8 @@ public class ProductServlet extends HttpServlet {
            request.getParameter("product_descr")!=null ||
            request.getParameter("product_price")!=null
         ){
-            shoppingChard.add(new ProductInfo(Integer.parseInt(request.getParameter("product_ID")),
+            shoppingChard.add(new ProductInfo(
+                    Integer.parseInt(request.getParameter("product_ID")),
                     request.getParameter("product_name"),
                     request.getParameter("product_imgUrl"),
                     request.getParameter("product_descr"),
@@ -51,24 +52,12 @@ public class ProductServlet extends HttpServlet {
 
         session.setAttribute("cart", cart);
         session.setAttribute("carts", shoppingChard);
-        //System.out.println("Yallaaaaaa");
-        //System.out.println(cart.get(cart.size()-1));
-        //System.out.println(request.getParameter("product_name"));
-        //System.out.println(request.getParameter("product_imgUrl"));
-        //System.out.println(request.getParameter("product_price"));
-        //System.out.println(request.getParameter("product_descr"));
-        //System.out.println(request.getParameter("product_ID"));
-        //System.out.println("Yallaaaaaa");
-
-
 
         String search = (String)session.getAttribute("search");
-
         ArrayList<ProductInfo> products = (ArrayList<ProductInfo>) ProductHandler.getItemsWithGroup(search);
 
         request.setAttribute("products", products);
         request.setAttribute("carts", shoppingChard);
-        //System.out.println(request.getAttribute("products"));
 
         request.getRequestDispatcher("/html/searchResults.jsp").forward(request, response);
     }

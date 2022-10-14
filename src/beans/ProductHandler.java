@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-// Are accessible in ui
+// Are accessible in controller
 public class ProductHandler {
     public static Collection<ProductInfo> getItemsWithGroup(String s) {
         Collection c = Product.searchItems(s);

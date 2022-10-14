@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="css/style.css">
 <meta charset="ISO-8859-1">
 <title>IKOA - Login</title>
-
 </head>
 <body>
 
@@ -56,6 +55,5 @@
 
 	</section>
 	<!-- #products -->
-
 </body>
 </html>

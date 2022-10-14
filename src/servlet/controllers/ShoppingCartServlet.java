@@ -22,7 +22,6 @@ public class ShoppingCartServlet extends HttpServlet {
         List<ProductInfo> shoppingChard = (ArrayList<ProductInfo>) req.getSession().getAttribute("carts");
         req.setAttribute("carts", shoppingChard);
 
-
         getServletContext().getRequestDispatcher("/html/shoppingCart.jsp").forward(req, resp);
     }
 }

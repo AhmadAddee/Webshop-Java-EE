@@ -21,6 +21,7 @@ public class UserValidator {
             while (set.next()) {
                 isValidUser = true;
             }
+
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
