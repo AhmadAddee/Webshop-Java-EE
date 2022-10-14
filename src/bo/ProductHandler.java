@@ -1,4 +1,4 @@
-package beans;
+package bo;
 
 import ui.ProductInfo;
 

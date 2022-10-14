@@ -33,7 +33,13 @@
 	</section>
 	<section id="login" class="section">
 		<div class="container tagline">
-
+        <%
+            if (request.getAttribute("error") != null){
+        %>
+            <%=request.getAttribute("error")%><br />
+        <%
+            }
+        %>
 			<em>LOGIN USER</em><br/><br/>
 			<form action="login" method="post">
 				<label>Username</label>

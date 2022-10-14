@@ -1,6 +1,6 @@
 package servlet.controllers;
 
-import beans.ProductHandler;
+import bo.ProductHandler;
 import ui.ProductInfo;
 
 import javax.servlet.ServletException;

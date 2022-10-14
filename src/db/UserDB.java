@@ -1,10 +1,16 @@
 package db;
 
+import bo.User;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserValidator {
+public class UserDB extends User {
+
+    private UserDB(String username, String password) {
+        super(username, password);
+    }
 
     public static boolean validateUser(String username, String password) {
         boolean isValidUser = false;

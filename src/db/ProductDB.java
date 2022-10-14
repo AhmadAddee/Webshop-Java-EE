@@ -1,6 +1,6 @@
 package db;
 
-import beans.Product;
+import bo.Product;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,6 +1,6 @@
 package servlet.controllers;
 
-import beans.UserHandler;
+import bo.UserHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             String errorMessage = "Invalid Credentials, please login again!";
             req.setAttribute("error", errorMessage);
+            System.out.println(req.getSession().getAttribute("error"));
             req.getRequestDispatcher("/html/login.jsp").forward(req, resp);
         }
     }
